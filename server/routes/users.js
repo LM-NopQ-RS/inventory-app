@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { User } = require("../models/user");
+const { User } = require("../models");
 
 router.post("/register", async (req, res) => {
   //checks if all the input feilds are filled
@@ -21,7 +21,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res, next) => {
+router.post("/login", async (req, res) => {
   //checks if all the input feilds are filled
   if (Object.values(req.body).includes("")) {
     return res.status(400).send("Inputs cannot be empty.");
@@ -49,3 +49,5 @@ router.post("/login", async (req, res, next) => {
     res.send(error);
   }
 });
+
+module.exports = router;

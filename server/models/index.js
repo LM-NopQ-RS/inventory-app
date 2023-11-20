@@ -1,6 +1,6 @@
-const {Sequelize} = require('sequelize')
-const {sequelize} = require('../db')
-const { User } = require('./user')
+const { Sequelize } = require("sequelize");
+const { sequelize } = require("../db");
+const { User } = require("./user");
 
 const Sauce = sequelize.define("sauces", {
   name: Sequelize.STRING,

@@ -1,13 +1,14 @@
-const { sequelize } = require("../db");
+const { sequelize, DataTypes } = require("../db");
+const { Sequelize } = require("sequelize");
 
 //Item model with name, description, price, category and image.
 
 const Item = sequelize.define("items", {
-  name: DataTypes.STRING,
-  description: DataTypes.STRING,
-  price: DataTypes.INTEGER,
-  category: DataTypes.STRING,
-  image: DataTypes.STRING,
+  name: Sequelize.STRING,
+  description: Sequelize.STRING,
+  price: Sequelize.INTEGER,
+  category: Sequelize.STRING,
+  image: Sequelize.STRING,
 });
 
 module.exports = Item;

@@ -4,6 +4,9 @@ module.exports = {
     {"name" : "Franks", "image": "https://cdn.streamelements.com/uploads/1887a0da-3642-4795-b5f5-774d5b377e52.gif"},
     {"name" : "Tobasco", "image": "https://64.media.tumblr.com/1564fcf74adc3fe6542c34b6a1f05de1/tumblr_na9lew0bNS1tha1vgo1_r1_250.gif"}
   ],
+  users: [
+   {"username": "tod","password" : "1234","email" : "tod@gmail.com"},
+   {"username": "myUsername","password" : "myPassword","email" : "datBoi@gmail.com"}],
   items: [
     {
        "name":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",

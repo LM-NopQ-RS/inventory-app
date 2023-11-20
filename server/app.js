@@ -17,13 +17,13 @@ app.use(express.json());
 // serve up static files (e.g. html and css files)
 app.use(express.static(path.join(__dirname, "../dist")));
 
+// api router
+app.use("/api", require("./routes"));
+
 // serve the index.html to all routes
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
-
-// api router
-app.use("/api", require("./routes"));
 
 // 404 handler
 app.use((req, res) => {

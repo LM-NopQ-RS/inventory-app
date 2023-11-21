@@ -1,16 +1,32 @@
 
 import React, { useState } from 'react';
 import apiURL from '../api';
+import { useNavigate } from "react-router";
 
 const Login = ({ isLogin }) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const navigate = useNavigate();
 
-    function handleSubmit (e){
+    async function handleSubmit (e){
         try {
             e.preventDefault()
+            const response = await fetch(`${apiURL}/login`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                }, body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            })
+            const data = await response.json();
+            if (data === "Invalid user" || data === "Incorrect password"){
+                console.log(data);
+            }
+            else{ navigate("/")}
         } catch (err) {
-
+            console.log(err);
         }
     }
   

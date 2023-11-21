@@ -39,13 +39,14 @@ const Login = ({ setIsLogin }) => {
   return (
     <>
       <form
+        className="flip-card-form"
         onSubmit={(e) => {
           handleSubmit(e);
         }}
       >
-        <h3>Log In</h3>
-        <div>
-          <p>Email</p>
+        <h2>Login</h2>
+        <div className="input-field">
+          <p className="background-grey">Email</p>
           <input
             id="email-input"
             type="text"
@@ -54,8 +55,8 @@ const Login = ({ setIsLogin }) => {
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
-        <div>
-          <p>Password</p>
+        <div className="input-field">
+          <p className="background-grey">Password</p>
           <input
             id="password-input"
             type="text"
@@ -64,17 +65,20 @@ const Login = ({ setIsLogin }) => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <p>
+        <p className="flip-link-text">
           Dont have an account?
           <a
+            className="background-grey flip-link"
             onClick={() => {
               setIsLogin(false);
             }}
           >
-            Sign up
+            {" Sign up"}
           </a>
         </p>
-        <button type="submit">Log In</button>
+        <button className="login-button" type="submit">
+          Log In
+        </button>
       </form>
     </>
   );

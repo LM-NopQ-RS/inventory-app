@@ -8,6 +8,7 @@ const AuthenticationPage = () => {
   return (
     <>
       <main className="authentication-page">
+        <h1 className="logo-text">Welcome to Box!</h1>
         <section className={isLogin ? "flip-card flipped" : "flip-card"}>
           <div className="flip-card-front">
             <Register setIsLogin={setIsLogin} />

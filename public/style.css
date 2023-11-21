@@ -20,8 +20,17 @@
   height: 100vh;
   background-color: #985df5;
   display: flex;
+  /* i changed the flex direction to column (can be changed back) */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.logo-text {
+  background-color: #985df5;
+  color: #fff1f8;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
 }
 
 .authentication-page .flip-card {

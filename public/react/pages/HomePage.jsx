@@ -1,10 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { Outlet, useNavigate } from "react-router";
+import SideNav from "../components/SideNav";
 
 const HomePage = () => {
   return (
     <>
-      <h1>Hello from HomePage</h1>
+      <SideNav />
+      <Outlet />
     </>
   );
 };

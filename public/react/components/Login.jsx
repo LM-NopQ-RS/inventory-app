@@ -1,19 +1,16 @@
-
-import React, { useState } from 'react';
-import apiURL from '../api';
+import React, { useState } from "react";
+import apiURL from "../api";
 
 const Login = ({ isLogin }) => {
-    const [email, setEmail] = useState();
-    const [username, setUsername] = useState();
+  const [email, setEmail] = useState();
+  const [username, setUsername] = useState();
 
-    function handleSubmit (e){
-        try {
-            e.preventDefault()
-        } catch (err) {
+  function handleSubmit(e) {
+    try {
+      e.preventDefault();
+    } catch (err) {}
+  }
 
-        }
-    }
-  
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -47,6 +44,5 @@ const Login = ({ isLogin }) => {
     </>
   );
 };
-
 
 module.exports = Login;

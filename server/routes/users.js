@@ -2,6 +2,17 @@ const express = require("express");
 const router = express.Router();
 const { User } = require("../models");
 
+router.get("/", async (req, res) => {
+  try {
+    //getting all users
+    const users = await User.findAll();
+    return res.send(users);
+  } catch (error) {
+    //send any erros
+    return res.send(error);
+  }
+});
+
 router.post("/register", async (req, res) => {
   //checks if all the input feilds are filled
   if (Object.values(req.body).includes("")) {

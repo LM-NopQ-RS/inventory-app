@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import apiURL from '../api';
 import { useNavigate } from "react-router";
@@ -63,6 +62,5 @@ const Login = ({ isLogin }) => {
     </>
   );
 };
-
 
 module.exports = Login;

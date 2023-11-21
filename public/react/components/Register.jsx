@@ -1,6 +1,5 @@
 const Register = () => {
-
-    return;
-} 
+  return;
+};
 
 module.exports = Register;

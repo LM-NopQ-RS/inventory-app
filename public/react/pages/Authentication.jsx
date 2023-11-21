@@ -3,7 +3,17 @@ import React from "react";
 const AuthenticationPage = () => {
   return (
     <>
-      <h1>Hello from AuthenticationPage</h1>
+      <main className="authentication-page">
+        <section className="flip-card">
+          <div className="flip-card-front">
+            <Register />
+          </div>
+
+          <div className="flip-card-back">
+            <Login />
+          </div>
+        </section>
+      </main>
     </>
   );
 };

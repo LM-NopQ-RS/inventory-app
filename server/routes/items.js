@@ -2,13 +2,15 @@ const express = require("express");
 const router = express.Router();
 const { Item } = require("../models");
 
+router.use(express.json());
+
 // GET /items
-router.get("/", async (req, res, next) => {
+router.get("/", async (req, res) => {
   try {
     const items = await Item.findAll();
     res.send(items);
   } catch (error) {
-    next(error);
+    res.status(400).send(error);
   }
 });
 

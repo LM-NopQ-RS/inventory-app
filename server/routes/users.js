@@ -35,7 +35,7 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   //checks if all the input feilds are filled
   if (Object.values(req.body).includes("")) {
-    return res.status(400).send("Inputs cannot be empty.");
+    return res.status(400).send({ message: "Inputs cannot be empty." });
   }
   try {
     //Find the user
@@ -46,13 +46,13 @@ router.post("/login", async (req, res) => {
     });
     if (!user) {
       // checks if the user does not exist
-      return res.status(404).send("Invalid user");
+      return res.status(404).send({ message: "Invalid user" });
     } else {
       // checks if the passwords match
       if (user.password === req.body.password) {
         return res.send(user);
       } else {
-        return res.status(400).send("Incorrect password");
+        return res.status(400).send({ message: "Incorrect password" });
       }
     }
   } catch (error) {

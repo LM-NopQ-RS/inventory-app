@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AuthenticationPage = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
   return (
     <>
       <main className="authentication-page">
-        {/* When isLogin is true set the className of the flip card to "flip-card
-        flipped" else "flip-card" */}
-        <section className="flip-card">
+        <section className={isLogin ? "flip-card flipped" : "flip-card"}>
           <div className="flip-card-front">
-            <Register />
+            <Register isLogin={isLogin} setIsLogin={setIsLogin} />
           </div>
 
           <div className="flip-card-back">
-            <Login />
+            <Login isLogin={isLogin} setIsLogin={setIsLogin} />
           </div>
         </section>
       </main>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Register from "../components/Register";
+import Login from "../components/Login";
 
 const AuthenticationPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -8,11 +10,11 @@ const AuthenticationPage = () => {
       <main className="authentication-page">
         <section className={isLogin ? "flip-card flipped" : "flip-card"}>
           <div className="flip-card-front">
-            <Register isLogin={isLogin} setIsLogin={setIsLogin} />
+            <Register setIsLogin={setIsLogin} />
           </div>
 
           <div className="flip-card-back">
-            <Login isLogin={isLogin} setIsLogin={setIsLogin} />
+            <Login setIsLogin={setIsLogin} />
           </div>
         </section>
       </main>

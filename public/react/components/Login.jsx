@@ -1,37 +1,45 @@
-import React, { useState } from 'react';
-import apiURL from '../api';
+import React, { useState } from "react";
+import apiURL from "../api";
 import { useNavigate } from "react-router";
 
-const Login = ({ isLogin }) => {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    const navigate = useNavigate();
+const Login = ({ setIsLogin }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    async function handleSubmit (e){
-        try {
-            e.preventDefault()
-            const response = await fetch(`${apiURL}/login`, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                }, body: JSON.stringify({
-                    email: email,
-                    password: password
-                })
-            })
-            const data = await response.json();
-            if (data === "Invalid user" || data === "Incorrect password"){
-                console.log(data);
-            }
-            else{ navigate("/")}
-        } catch (err) {
-            console.log(err);
-        }
+  async function handleSubmit(e) {
+    try {
+      e.preventDefault();
+      const response = await fetch(`${apiURL}/users/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      navigate("/home");
+      setEmail("");
+      setPassword("");
+      return;
+    } catch (err) {
+      console.error(err);
+      setEmail("");
+      setPassword("");
     }
-  
+  }
+
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
         <h3>Log In</h3>
         <div>
           <p>Email</p>
@@ -55,7 +63,13 @@ const Login = ({ isLogin }) => {
         </div>
         <p>
           Dont have an account?
-          <a onClick={setIsLogin(false)}>Sign up</a>
+          <a
+            onClick={() => {
+              setIsLogin(false);
+            }}
+          >
+            Sign up
+          </a>
         </p>
         <button type="submit">Log In</button>
       </form>
@@ -63,4 +77,4 @@ const Login = ({ isLogin }) => {
   );
 };
 
-module.exports = Login;
+export default Login;

@@ -4,6 +4,8 @@ const AuthenticationPage = () => {
   return (
     <>
       <main className="authentication-page">
+        {/* When isLogin is true set the className of the flip card to "flip-card
+        flipped" else "flip-card" */}
         <section className="flip-card">
           <div className="flip-card-front">
             <Register />

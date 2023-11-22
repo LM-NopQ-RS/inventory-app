@@ -3,34 +3,34 @@ import { useNavigate } from "react-router";
 import logo from './SideNavIcons/home.svg';
 
 function SideNav() {
-    const [items, setItems] = useState([]);
-    const navigate = useNavigate();
-    const [search, setSearch] = useState("");
+  const [items, setItems] = useState([]);
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
 
-    async function getItems(){
-        try {
-			const response = await fetch(`${apiURL}/items`);
-			const itemsData = await response.json();
-			setItems(itemsData);
-		} catch (err) {
-			console.log("error: ", err)
-		}
+  async function getItems() {
+    try {
+      const response = await fetch(`${apiURL}/items`);
+      const itemsData = await response.json();
+      setItems(itemsData);
+    } catch (err) {
+      console.log("error: ", err);
     }
+  }
 
-    useEffect(() => {
-		getItems();
-	}, []);
+  useEffect(() => {
+    getItems();
+  }, []);
 
-    async function handleSubmit(e){
-        e.preventDefault();
-        console.log(search);
-        items.map((value) => {
-            if (((value.name).toLowerCase()).includes(search.toLowerCase())){
-            console.log(value)}
-        
-        })
-        setSearch("");
-    }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(search);
+    items.map((value) => {
+      if (value.name.toLowerCase().includes(search.toLowerCase())) {
+        console.log(value);
+      }
+    });
+    setSearch("");
+  }
 
     const navStyleTop = {
         backgroundColor: "#985df5",
@@ -96,26 +96,48 @@ function SideNav() {
     top: "0",
     left: "0"}}
     >
-        <div style = { navStyleTop } >
-            <form style={{ backgroundColor: "transparent"}}  onSubmit={ (e) => handleSubmit(e)}>
-                <input style = { searchStyle }
-                id="search-input"
-                type="text"
-                placeholder="search:"
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-                />
-            </form>
+      <div style={navStyleTop}>
+        <form
+          style={{ backgroundColor: "transparent" }}
+          onSubmit={(e) => handleSubmit(e)}
+        >
+          <input
+            style={searchStyle}
+            id="search-input"
+            type="text"
+            placeholder="search:"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+          />
+        </form>
+      </div>
+      <div style={navStyleBottom}>
+        <div style={buttonContainer}>
+          <div style={buttonTextStyle}>home:</div>{" "}
+          <button style={buttonStyle} onClick={() => navigate("/home")}>
+            home
+          </button>
         </div>
-        <div style = { navStyleBottom }>
-            <div style = { buttonContainer }><div style = { buttonTextStyle } onClick={() => navigate("/home")} >home:</div> 
-                <button style = { buttonStyle }><img src={logo} alt="home" style = { buttonStyle }/>
-            </button></div>
-            <div style = { buttonContainer }><div style = { buttonTextStyle }>profile: </div> <button style = { buttonStyle } >profile</button></div>
-            <div style = { buttonContainer }><div style = { buttonTextStyle }>settings: </div> <button style = { buttonStyle } >settings</button></div>
-            <div style = { buttonContainer }><div style = { buttonTextStyle }>logout: </div><button style = { buttonStyle } onClick={() => navigate("/")}>logout</button></div>
+        <div style={buttonContainer}>
+          <div style={buttonTextStyle}>profile: </div>{" "}
+          <button style={buttonStyle}>profile</button>
         </div>
-    </div >)
+        <div style={buttonContainer}>
+          <div style={buttonTextStyle}>settings: </div>{" "}
+          <button style={buttonStyle}>settings</button>
+        </div>
+
+        <div style={buttonContainer}>
+          <div style={buttonTextStyle}>logout: </div>
+          <button style={buttonStyle} onClick={() => navigate("/")}>
+            logout
+          </button>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default SideNav;

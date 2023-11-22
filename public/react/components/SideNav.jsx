@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import apiURL from "../api";
+import logo from './SideNavIcons/home.svg';
 
 function SideNav() {
   const [items, setItems] = useState([]);
@@ -32,68 +32,69 @@ function SideNav() {
     setSearch("");
   }
 
-  const navStyleTop = {
-    backgroundColor: "#985df5",
-    height: "50%",
-    padding: "20px",
-    display: "flex",
-    borderBottomStyle: "solid",
-    borderColor: "#fff1f8",
-    borderWidth: "5px",
-  };
-  const navStyleBottom = {
-    backgroundColor: "#985df5",
-    padding: "20px",
-    height: "50%",
-    display: "flex",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    paddingRight: "10px",
-    paddingLeft: "10px",
-  };
-  const buttonTextStyle = {
-    borderStyle: "none",
-    color: "#FFF5FA",
-    backgroundColor: "transparent",
-    width: "50%",
-  };
-  const searchStyle = {
-    backgroundColor: "#FFF5FA",
-    borderStyle: "none",
-    height: "30px",
-    width: "150px",
-    borderRadius: "5px",
-  };
-  const buttonStyle = {
-    borderStyle: "none",
-    backgroundColor: "#FFF5FA",
-    height: "70px",
-    width: "70px",
-    borderRadius: "10px",
-    marginLeft: "2px",
-  };
-  const buttonContainer = {
-    borderStyle: "none",
-    height: "25%",
-    backgroundColor: "transparent",
-    alignItems: "space-between",
-    display: "flex",
-  };
-
-  return (
-    <div
-      className="container"
-      style={{
+    const navStyleTop = {
         backgroundColor: "#985df5",
-        float: "right",
-        width: "200px",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        position: "fixed",
-        top: "0",
-        left: "0",
-      }}
+        height: "50%", 
+        padding: "20px",
+        display:"flex", 
+        borderBottomStyle: "solid", 
+        borderColor: "#fff1f8",
+        borderWidth: "5px"
+    };
+    const navStyleBottom = {
+        backgroundColor: "#985df5",
+        padding: "20px",
+        height: "50%", 
+        display:"flex", 
+        flexDirection: "column", 
+        flexWrap: "wrap",
+        paddingRight:"10px",
+        paddingLeft:"10px"
+    };
+    const buttonTextStyle = {
+        borderStyle: "none",
+        color:"#FFF5FA",
+        backgroundColor: "transparent",
+        width: "50%",
+    };
+    const searchStyle = {
+        backgroundColor: "#FFF5FA",
+        borderStyle: "none",
+        height: "30px",
+        width: "150px", 
+        borderRadius:"5px"
+    };
+    const buttonStyle = {
+        borderStyle: "none",
+        backgroundColor: "#FFF5FA",
+        height: "70px", 
+        width: "70px",
+        borderRadius:"10px",
+        marginLeft:"2px"
+    };
+    const imgStyle = {
+        borderStyle: "none",
+        backgroundColor: "#FFF5FA",
+        height: "70px", 
+        width: "70px",
+        borderRadius:"10px",
+        marginLeft:"2px"
+    };
+    const buttonContainer = {
+        borderStyle: "none",
+        height: "25%",
+        backgroundColor: "transparent",
+        alignItems: "space-between",
+        display: "flex"
+    };
+
+    return(
+    <div className="container"
+    style = {{backgroundColor: "#985df5", float:"right", width:"13%", 
+    height:"100%", display:"flex",flexDirection: "column", 
+    position: "fixed", 
+    top: "0",
+    left: "0"}}
     >
       <div style={navStyleTop}>
         <form
@@ -125,11 +126,14 @@ function SideNav() {
           <div style={buttonTextStyle}>settings: </div>{" "}
           <button style={buttonStyle}>settings</button>
         </div>
+
         <div style={buttonContainer}>
           <div style={buttonTextStyle}>logout: </div>
           <button style={buttonStyle} onClick={() => navigate("/")}>
             logout
           </button>
+        </div>
+
         </div>
       </div>
     </div>

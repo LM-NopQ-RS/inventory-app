@@ -8,11 +8,15 @@
 }
 
 * > h1 {
+  color: #fff1f8;
   font-family: "Russo One", sans-serif;
 }
 
 .background-grey {
   background-color: #555555;
+}
+.font-russo {
+  font-family: "Russo One", sans-serif;
 }
 /* Authentication page styles */
 .authentication-page {
@@ -178,6 +182,148 @@
   cursor: pointer;
 }
 
+/* DetailsPage styles */
+/* Container for all content on DetailsPage  */
+.details-container {
+  background-color: #fff1f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  height: 100vh;
+}
+/* Selects the button labeled BACK on DetailsPage  */
+.top-button-container {
+  height: 10%;
+  background-color: transparent;
+  width: 100%;
+}
+
+.top-button-container > button {
+  height: 100px;
+  font-size: large;
+  margin-left: 10%;
+  align-self: flex-start;
+  background-color: #985df5;
+  color: #fff1f8;
+  border-radius: 6px;
+  width: 200px;
+  padding: 20px;
+  min-width: fit-content;
+  align-self: flex-start;
+  border: #fff1f8;
+}
+.top-button-container > button:hover {
+  background-color: #8451d6;
+  font-size: larger;
+  width: 220px;
+  height: 110px;
+}
+
+/* Selects the "Created on:" and "By User:" on DetailsPage  */
+.created-details {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+  background-color: transparent;
+  height: 100px;
+  padding: 10px;
+}
+.created-item-container {
+  width: 25%;
+  max-width: 40%;
+  max-height: 100%;
+}
+
+.created-item-container,
+.created-item-container > * {
+  color: #985df5;
+  font-size: x-large;
+  background-color: transparent;
+}
+
+.created-item-container > h3 {
+  font-family: "Russo One", sans-serif;
+}
+/* targets the whole text box on DetailsPage including buttons */
+.item-details-content {
+  background-color: #555555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 80%;
+  border-radius: 14px;
+  gap: 5%;
+}
+/* container for text and Image (not buttons) on DetailsPage inside the text box */
+.item-details {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* text container div on DetailsPage  */
+.item-details-text {
+  background-color: transparent;
+  width: 65%;
+}
+
+/* text elements on on DetailsPage inside the text box */
+.item-details-text > h1,
+.item-details-text > h2,
+.item-details-text > h3,
+.item-details-text > p {
+  background-color: transparent;
+  color: #fff1fa;
+  padding: 20px;
+}
+.item-details-text > h2 {
+  font-family: "Russo One", sans-serif;
+}
+/* Image on DetailsPage */
+.item-details > img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+/* button container on DetailsPage */
+.button-container {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-right: 20px;
+  height: 10%;
+}
+/* Button on DetailsPage */
+.button-container > button {
+  background-color: #985df5;
+  color: #fff1f8;
+  border: #fff1f8;
+  border-radius: 6px;
+  width: 200px;
+  padding: 20px;
+  margin-bottom: 10px;
+  min-width: fit-content;
+  align-self: flex-end;
+}
+.button-container > button:hover {
+  background-color: #8451d6;
+  font-size: medium;
+  width: 220px;
+  padding-top: 25px;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -270,4 +416,3 @@
 .form .submit-button:hover,
 .close-button:hover {
   animation: button-animation 0.5s ease-in;
-}

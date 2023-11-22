@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import apiURL from "../api";
 import { useNavigate } from "react-router";
 
-const Register = () => {
+const Register = ({ setIsLogin }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,7 +45,7 @@ const Register = () => {
           handleSubmit(e);
         }}
       >
-        <h2>Login</h2>
+        <h2>Register</h2>
         <div className="input-field">
           <p className="background-grey">Name</p>
           <input
@@ -84,11 +84,11 @@ const Register = () => {
               setIsLogin(true);
             }}
           >
-            {"Login"}
+            {" Login"}
           </a>
         </p>
         <button className="login-button" type="submit">
-          Log In
+          Create Account
         </button>
       </form>
     </>

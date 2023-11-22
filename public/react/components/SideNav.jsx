@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import apiURL from "../api";
+import logo from './SideNavIcons/home.svg';
 
 function SideNav() {
     const [items, setItems] = useState([]);
@@ -72,6 +72,14 @@ function SideNav() {
         borderRadius:"10px",
         marginLeft:"2px"
     };
+    const imgStyle = {
+        borderStyle: "none",
+        backgroundColor: "#FFF5FA",
+        height: "70px", 
+        width: "70px",
+        borderRadius:"10px",
+        marginLeft:"2px"
+    };
     const buttonContainer = {
         borderStyle: "none",
         height: "25%",
@@ -82,7 +90,7 @@ function SideNav() {
 
     return(
     <div className="container"
-    style = {{backgroundColor: "#985df5", float:"right", width:"200px", 
+    style = {{backgroundColor: "#985df5", float:"right", width:"13%", 
     height:"100%", display:"flex",flexDirection: "column", 
     position: "fixed", 
     top: "0",
@@ -100,7 +108,9 @@ function SideNav() {
             </form>
         </div>
         <div style = { navStyleBottom }>
-            <div style = { buttonContainer }><div style = { buttonTextStyle }>home:</div> <button style = { buttonStyle } onClick={() => navigate("/home")}>home</button></div>
+            <div style = { buttonContainer }><div style = { buttonTextStyle } onClick={() => navigate("/home")} >home:</div> 
+                <button style = { buttonStyle }><img src={logo} alt="home" style = { buttonStyle }/>
+            </button></div>
             <div style = { buttonContainer }><div style = { buttonTextStyle }>profile: </div> <button style = { buttonStyle } >profile</button></div>
             <div style = { buttonContainer }><div style = { buttonTextStyle }>settings: </div> <button style = { buttonStyle } >settings</button></div>
             <div style = { buttonContainer }><div style = { buttonTextStyle }>logout: </div><button style = { buttonStyle } onClick={() => navigate("/")}>logout</button></div>

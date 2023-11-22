@@ -192,6 +192,7 @@
   align-items: center;
   row-gap: 20px;
   height: 100vh;
+  margin-left: 200px;
 }
 /* Selects the button labeled BACK on DetailsPage  */
 .top-button-container {

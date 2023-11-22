@@ -415,6 +415,19 @@
 }
 
 .form .submit-button:hover,
-.close-button:hover {
+.close-button:hover,
+.add-item-button:hover {
   animation: button-animation 0.5s ease-in;
+}
+
+.add-item-button {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: 0.5s ease-in-out;
 }

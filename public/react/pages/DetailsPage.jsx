@@ -8,25 +8,42 @@ function DetailsPage() {
   const { id } = useParams();
   const [item, setItem] = useState({});
   const navigate = useNavigate();
+  const getItem = async () => {
+    try {
+      const response = await fetch(`${apiURL}/items/${id}`);
+      const itemData = await response.json();
+      setItem(itemData);
+      console.log(itemData);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const deleteItem = async () => {
+    try {
+      const response = await fetch(`${apiURL}/items/${id}`, {
+        method: "DELETE",
+      });
+      await response.json();
+      navigate("/home");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
-    const getItem = async () => {
-      try {
-        const response = await fetch(`${apiURL}/items/${id}`);
-        const itemData = await response.json();
-        setItem(itemData);
-        console.log(itemData);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
     getItem();
-  }, [id]);
+  }, []);
 
   return (
     <>
-      {isOpen && <UpdateForm updatingItem={item} setIsOpen={setIsOpen} />}
+      {isOpen && (
+        <UpdateForm
+          getItems={getItem}
+          updatingItem={item}
+          setIsOpen={setIsOpen}
+        />
+      )}
       <div className="details-container">
         <div className="top-button-container">
           <button
@@ -69,7 +86,7 @@ function DetailsPage() {
           </div>
           <div className="button-container">
             <button onClick={() => setIsOpen(true)}>Edit</button>
-            <button>Delete</button>
+            <button onClick={deleteItem}>Delete</button>
           </div>
         </div>
       </div>

@@ -25,7 +25,9 @@ function SideNav() {
         e.preventDefault();
         console.log(search);
         items.map((value) => {
-            console.log(value)
+            if (((value.name).toLowerCase()).includes(search.toLowerCase())){
+            console.log(value)}
+        
         })
         setSearch("");
     }

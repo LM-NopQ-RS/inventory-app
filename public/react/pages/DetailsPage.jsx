@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import apiURL from "../api";
 
 function DetailsPage() {
   const { id } = useParams();
   const [item, setItem] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getItem = async () => {
@@ -22,7 +23,13 @@ function DetailsPage() {
 
   return (
     <div className="details-container">
-      <button>BACK</button>
+      <button
+        onClick={() => {
+          navigate("/home");
+        }}
+      >
+        BACK
+      </button>
       <section className="created-details">
         <div>
           <h3>Created on:</h3>

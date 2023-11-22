@@ -177,6 +177,8 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+/* Container for all content on DetailsPage  */
 .details-container {
   display: flex;
   flex-direction: column;
@@ -184,6 +186,18 @@
   align-items: center;
   height: 100vh;
 }
+/* Selects the button labeled BACK on DetailsPage  */
+.details-container > button {
+  margin-left: 10%;
+  align-self: flex-start;
+}
+/* Selects the "Created on:" and "By User:" on DetailsPage  */
+.created-details {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+/* targets the whole text box on DetailsPage including buttons */
 .item-details-content {
   background-color: #555555;
   display: flex;
@@ -195,6 +209,7 @@
   border-radius: 14px;
   gap: 5%;
 }
+/* container for text and Image (not buttons) on DetailsPage inside the text box */
 .item-details {
   background-color: transparent;
   width: 100%;
@@ -203,10 +218,14 @@
   justify-content: center;
   align-items: center;
 }
+
+/* text container div on DetailsPage  */
 .item-details-text {
   background-color: transparent;
   width: 65%;
 }
+
+/* text elements on on DetailsPage inside the text box */
 .item-details-text > h1,
 .item-details-text > h2,
 .item-details-text > h3,
@@ -214,11 +233,13 @@
   background-color: transparent;
   color: #fff1fa;
 }
+/* Image on DetailsPage */
 .item-details > img {
   border-radius: 50%;
   width: 300px;
   height: 300px;
 }
+/* button container on DetailsPage */
 .button-container {
   width: 80%;
   background-color: transparent;

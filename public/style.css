@@ -103,3 +103,167 @@
 .authentication-page .flip-card.flipped {
   transform: rotateY(180deg);
 }
+
+.items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.items-container .item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 600px;
+  margin: 20px;
+  padding: 30px;
+  background-color: #fff5fa;
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px #787878;
+}
+
+.items-container .item .image-container {
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+}
+
+.items-container .item .image-container > img {
+  border-radius: 50%;
+}
+
+.items-container .item .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 30px;
+  background-color: transparent;
+}
+
+.items-container .item .info .name_and_category {
+  padding-bottom: 14px;
+  background-color: transparent;
+}
+
+.items-container .item .info .name_and_category > h3 {
+  font-family: sans-serif;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.items-container .item .info .name_and_category > h5 {
+  font-family: sans-serif;
+  background-color: transparent;
+  color: grey;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+.info > button {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-family: sans-serif;
+  background-color: #985df5;
+  border: none;
+  color: #fff5fa;
+  font-size: 14px;
+  font-weight: normal;
+  width: 140px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Container for all content on DetailsPage  */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Selects the button labeled BACK on DetailsPage  */
+.details-container > button {
+  margin-left: 10%;
+  align-self: flex-start;
+  background-color: #fff1f8;
+  color: #555555;
+  border-radius: 6px;
+  width: 200px;
+  padding: 20px;
+  min-width: fit-content;
+  align-self: flex-start;
+}
+/* Selects the "Created on:" and "By User:" on DetailsPage  */
+.created-details {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+/* targets the whole text box on DetailsPage including buttons */
+.item-details-content {
+  background-color: #555555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 80%;
+  border-radius: 14px;
+  gap: 5%;
+}
+/* container for text and Image (not buttons) on DetailsPage inside the text box */
+.item-details {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* text container div on DetailsPage  */
+.item-details-text {
+  background-color: transparent;
+  width: 65%;
+}
+
+/* text elements on on DetailsPage inside the text box */
+.item-details-text > h1,
+.item-details-text > h2,
+.item-details-text > h3,
+.item-details-text > p {
+  background-color: transparent;
+  color: #fff1fa;
+}
+/* Image on DetailsPage */
+.item-details > img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+/* button container on DetailsPage */
+.button-container {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-right: 20px;
+}
+/* Button on DetailsPage */
+.button-container > button {
+  background-color: #fff1f8;
+  color: #555555;
+  border-radius: 6px;
+  width: 200px;
+  padding: 20px;
+  margin-bottom: 10px;
+  min-width: fit-content;
+  align-self: flex-end;
+}

@@ -1,14 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
+import logo from "./SideNavIcons/home.svg";
+import { SearchContext } from "../pages/HomePage";
 import home from "./SideNavIcons/home.svg";
 import profile from "./SideNavIcons/user.svg";
 import settings from "./SideNavIcons/settings.svg";
 import logout from "./SideNavIcons/undo.svg";
 
+
 function SideNav() {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+
+  //searchText and setSearchText imported from SearchContext
+  const { searchText, setSearchText } = useContext(SearchContext);
+
+  function searchFn(e) {
+    setSearchText(e.target.value);
+  }
 
   async function getItems() {
     try {
@@ -116,8 +126,8 @@ function SideNav() {
             id="search-input"
             type="text"
             placeholder="search:"
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
+            value={searchText}
+            onChange={(event) => searchFn(event)}
           />
         </form>
       </div>

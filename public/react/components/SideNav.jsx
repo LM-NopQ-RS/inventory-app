@@ -146,7 +146,7 @@ function SideNav() {
         </div>
         <div style={buttonContainer}>
           <div style={buttonTextStyle}>logout: </div>
-          <img style={imgStyle} onClick={() => navigate("/home")} src={logout} alt="logout"></img>
+          <img style={imgStyle} onClick={() => navigate("/")} src={logout} alt="logout"></img>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 module.exports = {
   users: [
-    { username: "tod", password: "1234", email: "tod@gmail.com" },
+    { name: "Tod", password: "1234", email: "tod@gmail.com" },
     {
-      username: "myUsername",
+      name: "My Name",
       password: "myPassword",
       email: "datBoi@gmail.com",
     },

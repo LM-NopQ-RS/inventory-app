@@ -2,6 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
 import logo from "./SideNavIcons/home.svg";
 import { SearchContext } from "../pages/HomePage";
+import home from "./SideNavIcons/home.svg";
+import profile from "./SideNavIcons/user.svg";
+import settings from "./SideNavIcons/settings.svg";
+import logout from "./SideNavIcons/undo.svg";
+
 
 function SideNav() {
   const [items, setItems] = useState([]);
@@ -129,24 +134,19 @@ function SideNav() {
       <div style={navStyleBottom}>
         <div style={buttonContainer}>
           <div style={buttonTextStyle}>home:</div>{" "}
-          <button style={buttonStyle} onClick={() => navigate("/home")}>
-            home
-          </button>
+            <img style={imgStyle} onClick={() => navigate("/home")} src={home} alt="home"></img>
         </div>
         <div style={buttonContainer}>
           <div style={buttonTextStyle}>profile: </div>{" "}
-          <button style={buttonStyle}>profile</button>
+          <img style={imgStyle} src={profile} alt="profile"></img>
         </div>
         <div style={buttonContainer}>
           <div style={buttonTextStyle}>settings: </div>{" "}
-          <button style={buttonStyle}>settings</button>
+          <img style={imgStyle} src={settings} alt="settings"></img>
         </div>
-
         <div style={buttonContainer}>
           <div style={buttonTextStyle}>logout: </div>
-          <button style={buttonStyle} onClick={() => navigate("/")}>
-            logout
-          </button>
+          <img style={imgStyle} onClick={() => navigate("/home")} src={logout} alt="logout"></img>
         </div>
       </div>
     </div>

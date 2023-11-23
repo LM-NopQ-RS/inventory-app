@@ -1,22 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import apiURL from "../api";
 import Item from "../components/Item";
 import AddForm from "../components/AddForm";
 import AddButton from "../components/AddButton";
+import { SearchContext } from "./HomePage";
 
 function DashBoard() {
   const [items, setItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  //importing the searchText from SearchContext
+  const { searchText } = useContext(SearchContext);
 
   async function getItems() {
     const res = await fetch(`${apiURL}/items`);
     const data = await res.json();
-    setItems(data);
+
+    //search functionality
+    if (searchText !== "") {
+      const searchData = data.filter((item) =>
+        item.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setItems(searchData);
+    } else {
+      setItems(data);
+    }
   }
 
   useEffect(() => {
     getItems();
-  }, []);
+  }, [searchText]);
 
   return (
     <>
